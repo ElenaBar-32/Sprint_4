@@ -12,7 +12,6 @@ public class OrderTest extends BaseOrderTest {
     private final String lastName;
     private final String address;
     private final String metroStation;
-    //private final String rentalPeriod;
     private final String telephone;
     private final String data;
     private final String dropdownOption;
@@ -28,7 +27,6 @@ public class OrderTest extends BaseOrderTest {
         this.metroStation = metroStation;
         this.telephone = telephone;
         this.data= data;
-        //this.rentalPeriod= rentalPeriod;
         this.dropdownOption= dropdownOption;
         this.scooterColor = scooterColor;
         this.comment= comment;
@@ -52,6 +50,7 @@ public class OrderTest extends BaseOrderTest {
       orderStepsPage.clickOrder2();
     }
 }
+
 
 
 

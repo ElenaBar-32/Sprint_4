@@ -5,7 +5,6 @@ import page.MainOrderPage;
 
 public class OrderStepsPage extends MainOrderPage {
 
-   // private WebDriver driver;
 
     public OrderStepsPage(WebDriver driver) {
         super(driver);

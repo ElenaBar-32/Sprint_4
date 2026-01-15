@@ -51,35 +51,4 @@ public class BaseOrderTest {
 
 
 
-    //@Before
-   // public void start() {
-
-       // String browser = System.getProperty("browser", "chrome");
-       // if (browser.equals("chrome")) {
-        //    startBrowserChrome();
-       // } else if (browser.equals("firefox")) {
-       //     startBrowserFirefox();
-       // }
-      //  mainOrder = new MainOrderPage(driver);
-      //  orderSteps = new OrderStepsPage(driver);
-   // }
-    //public void startBrowserFirefox () {
-       // WebDriverManager.firefoxdriver().setup();
-       // driver = new FirefoxDriver();
-   // }
-   // public void startBrowserChrome() {
-
-      //  WebDriverManager.chromedriver().setup();
-      //  driver= new ChromeDriver();
-  //  }
-  //  @After
-  //  public void tearDown() {
-        // Закрыть браузер
-    //    driver.quit();
-  //  }
-//}
-
-
-
-
 

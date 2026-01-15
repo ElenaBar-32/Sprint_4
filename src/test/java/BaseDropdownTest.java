@@ -15,7 +15,7 @@ public class BaseDropdownTest {
 
     public void start() {
 
-        WebDriverManager.chromedriver().setup();  // Должно быть перед созданием драйвера
+        WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         //WebDriverManager.firefoxdriver().setup();
        // driver= new FirefoxDriver();
