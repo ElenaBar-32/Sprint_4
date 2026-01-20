@@ -41,13 +41,20 @@ public class OrderTest extends BaseOrderTest {
     }
     @Test
     public void buttonOrderTest() {
-
+        mainQuestionPage.openPage();
+        mainQuestionPage.clickCookieButton();
       orderStepsPage.clickOrder(name, lastName, address, metroStation, telephone);
-      orderStepsPage.rentSteps(data, dropdownOption, scooterColor,comment); // удалили dropdownOption
+      orderStepsPage.clickNext();
+      orderStepsPage.rentSteps(data, dropdownOption, scooterColor,comment);
+      orderStepsPage.getOrderConfirmation();
+      orderStepsPage.clickYesButton();
+      orderStepsPage.getOrderCreatedField();
     }
     @Test
     public void buttonOrderTest2 () {
-      orderStepsPage.clickOrder2();
+        mainQuestionPage.openPage();
+        mainQuestionPage.clickCookieButton();
+      orderStepsPage.clickOrderButton2();
     }
 }
 

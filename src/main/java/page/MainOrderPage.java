@@ -12,7 +12,7 @@ public class MainOrderPage {
     protected WebDriver driver;
 
     //переменные кнопки Заказать
-    private final By cookieButton = By.className("App_CookieButton__3cvqF");
+
     private final By orderButton2 = By.xpath(".//button[contains(@class, 'Button_Middle') and text() = 'Заказать']");
     private final By orderButton = By.className("Button_Button__ra12g");
     private final By nameField = By.cssSelector("input[placeholder='* Имя']");
@@ -33,69 +33,51 @@ public class MainOrderPage {
     private final By orderConfirmationField = By.xpath(".//button[contains(@class, 'Button_Middle') and text() = 'Заказать']");
     private final By yesButton = By.xpath(".//button[contains(@class, 'Button_Middle') and text() = 'Да']");
     private final By orderCreatedField = By.className("Order_Modal__YZ-d3");
-    private final String URL = "https://qa-scooter.praktikum-services.ru/";
+
 
 
     //методы Заказать
     public MainOrderPage(WebDriver driver) {
         this.driver = driver;
     }
-    public void openPage() {
-        driver.get(URL);
-    }
-    public void clickCookieButton() {
-        driver.findElement(cookieButton).click();
-    }
+
+
     public void clickOrderButton() {
         driver.findElement(orderButton).click();
     }
-    public void setName(String name) {
+
+    public void fillingFields(String name, String lastName, String address, String metroStation, String telephone) {
         driver.findElement(nameField).sendKeys(name);
-    }
-    public void setLastName(String lastName) {
         driver.findElement(lastNameField).sendKeys(lastName);
-    }
-    public void setAddress(String address) {
         driver.findElement(addressField).sendKeys(address);
-    }
-
-    public void  setMetroStation(String metroStation) {
         driver.findElement(metroStationField).sendKeys(metroStation);
-          new WebDriverWait(driver, Duration.ofSeconds(10))
-        .until(ExpectedConditions.elementToBeClickable(dropdownMenuList));
+        new WebDriverWait(driver, Duration.ofSeconds(10))
+                .until(ExpectedConditions.elementToBeClickable(dropdownMenuList));
         driver.findElement(dropdownMenuList).click();
+        driver.findElement(telephoneField).sendKeys(telephone);
 
     }
-    public void setTelephone(String telephone) {
-        driver.findElement(telephoneField).sendKeys(telephone);
-    }
-    public void clickNext () {
+
+    public void clickNext() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         WebElement nextButtonElement = wait.until(ExpectedConditions.elementToBeClickable(nextButton));
         nextButtonElement.click();
     }
     // методы аренды
-    public void setData(String data) {
+
+    public void fillingOutRentalFields(String data, String dropdownOption, String ScooterColor, String comment) {
         driver.findElement(dataField).sendKeys(data);
         new WebDriverWait(driver, Duration.ofSeconds(10))
-        .until(ExpectedConditions.elementToBeClickable(datepickerPopperList));
+                .until(ExpectedConditions.elementToBeClickable(datepickerPopperList));
         driver.findElement(datepickerPopperList).click();
-        }
-
-      public void setRentalPeriod(String dropdownOption) {
-       driver.findElement(rentalPeriodField).click();
-          new WebDriverWait(driver, Duration.ofSeconds(10))
-                  .until(ExpectedConditions.elementToBeClickable(rentDropdownOption));
-          driver.findElement(rentDropdownOption).click();
-   }
-
-    public void setScooterColor(String ScooterColor) {
+        driver.findElement(rentalPeriodField).click();
+        new WebDriverWait(driver, Duration.ofSeconds(10))
+                .until(ExpectedConditions.elementToBeClickable(rentDropdownOption));
+        driver.findElement(rentDropdownOption).click();
         driver.findElement(scooterColorField).sendKeys(ScooterColor);
-    }
-    public void setComment(String comment) {
         driver.findElement(commentField).sendKeys(comment);
-    }
 
+}
     public void getOrderConfirmation() {
         driver.findElement(orderConfirmationField).click();
     }

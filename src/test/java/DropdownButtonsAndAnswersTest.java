@@ -6,7 +6,7 @@ import org.junit.runners.Parameterized;
 import static org.junit.Assert.assertEquals;
 
 @RunWith(Parameterized.class)
-public class DropdownButtonsAndAnswersTest extends BaseDropdownTest {
+public class DropdownButtonsAndAnswersTest extends BaseOrderTest {
 
     private final int index;
     private  final String answerPanel;
@@ -42,8 +42,6 @@ public class DropdownButtonsAndAnswersTest extends BaseDropdownTest {
     public void FaqTests() {
         mainQuestionPage.openPage();
         mainQuestionPage.clickCookieButton();
-
-
         String actualAnswer = mainQuestionPage.checkAnswer(index);
         assertEquals(answerPanel, actualAnswer);
 

@@ -11,29 +11,12 @@ public class OrderStepsPage extends MainOrderPage {
     }
     public void clickOrder (String name, String lastName, String address, String metroStation, String telephone) {
         //методы Заказать
-        openPage();
-        clickCookieButton ();
         clickOrderButton();
-        setName(name);
-        setLastName(lastName);
-        setAddress(address);
-        setMetroStation(metroStation);
-        setTelephone(telephone);
-        clickNext();
+        fillingFields (name,lastName,address,metroStation,telephone);
     }
         public void rentSteps(String data,String dropdownOption,String scooterColor, String comment){
             // методы аренды
-            setData(data);
-            setRentalPeriod(dropdownOption);
-            setScooterColor(scooterColor);
-            setComment(comment);
-            getOrderConfirmation();
-            clickYesButton();
-            getOrderCreatedField();
+            fillingOutRentalFields (data,dropdownOption,scooterColor, comment);
+
         }
-    public void clickOrder2 () {
-        openPage();
-        clickCookieButton ();
-        clickOrderButton2();
-    }
     }

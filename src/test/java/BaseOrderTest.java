@@ -5,23 +5,25 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import page.MainOrderPage;
+import page.MainQuestionPage;
 import steps.OrderStepsPage;
 
 public class BaseOrderTest {
     WebDriver driver ;
     protected MainOrderPage mainOrderPage;
     protected OrderStepsPage orderStepsPage ;
-
+    protected MainQuestionPage mainQuestionPage;
     @Before
 
     public void start() {
 
        WebDriverManager.chromedriver().setup();  // Должно быть перед созданием драйвера
       driver = new ChromeDriver();
-        //WebDriverManager.firefoxdriver().setup();
-      //  driver= new FirefoxDriver();
+       // WebDriverManager.firefoxdriver().setup();
+       // driver= new FirefoxDriver();
         mainOrderPage = new MainOrderPage(driver);
         orderStepsPage = new OrderStepsPage(driver);
+        mainQuestionPage = new MainQuestionPage(driver);
     }
 
     @After
