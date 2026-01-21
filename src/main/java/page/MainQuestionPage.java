@@ -13,7 +13,7 @@ public class MainQuestionPage {
     private WebDriver driver;
 
     private  final By cookieButton = By.className("App_CookieButton__3cvqF");
-    private  final By questionButton = By.className("accordion__button");                                                                    private  By buttonText = By.id("email");   //название кнопки
+    private  final By questionButton = By.className("accordion__button");     //панель с вопросами                                                            private  By buttonText = By.id("email");   //название кнопки
     private  final By answerPanel = By.className("accordion__panel"); // панель с ответами
     private  final String URL = "https://qa-scooter.praktikum-services.ru/";
 

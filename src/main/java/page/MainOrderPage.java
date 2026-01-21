@@ -89,7 +89,7 @@ public class MainOrderPage {
 
     }
 
-    //метод второй кнопки Заказать
+    //метод второй нижней кнопки Заказать
     public void clickOrderButton2() {
         driver.findElement(orderButton2).click();
     }

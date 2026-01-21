@@ -72,7 +72,7 @@ public class OrderTest extends BaseOrderTest {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         WebElement whoScooterFor = wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("Order_Header__BZXOb")));
 
-        assertTrue("Страница Для кого самокат  не найдена", whoScooterFor.getText().contains("Для кого самокат"));
+        assertTrue("Страница Для кого самокат не найдена", whoScooterFor.getText().contains("Для кого самокат"));
     }
 }
 

@@ -10,7 +10,7 @@ public class DropdownButtonsAndAnswersTest extends BaseOrderTest {
 
     private final int index;
     private  final String answerPanel;
-    private  final String questionButton;
+    private  final String questionButton; // используется в main
 
 
     public DropdownButtonsAndAnswersTest(int index,String questionButton, String answerPanel) {

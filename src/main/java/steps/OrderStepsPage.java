@@ -10,7 +10,7 @@ public class OrderStepsPage extends MainOrderPage {
         super(driver);
     }
     public void clickOrder (String name, String lastName, String address, String metroStation, String telephone) {
-        //методы Заказать
+        //методы Заказать 1
         clickOrderButton();
         fillingFields (name,lastName,address,metroStation,telephone);
     }
