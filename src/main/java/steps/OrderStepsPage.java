@@ -14,9 +14,9 @@ public class OrderStepsPage extends MainOrderPage {
         clickOrderButton();
         fillingFields (name,lastName,address,metroStation,telephone);
     }
-        public void rentSteps(String data,String dropdownOption,String scooterColor, String comment){
+        public void rentSteps(String data,String scooterColor, String comment){
             // методы аренды
-            fillingOutRentalFields (data,dropdownOption,scooterColor, comment);
+            fillingOutRentalFields (data,scooterColor, comment);
 
         }
     }

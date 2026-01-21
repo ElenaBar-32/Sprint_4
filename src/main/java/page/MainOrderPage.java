@@ -14,6 +14,7 @@ public class MainOrderPage {
     //переменные кнопки Заказать
 
     private final By orderButton2 = By.xpath(".//button[contains(@class, 'Button_Middle') and text() = 'Заказать']");
+    private final By whoScooterFor = By.className("Order_Header__BZXOb"); // переменная используется в OrdserTest
     private final By orderButton = By.className("Button_Button__ra12g");
     private final By nameField = By.cssSelector("input[placeholder='* Имя']");
     private final By lastNameField = By.cssSelector("input[placeholder='* Фамилия']");
@@ -32,7 +33,7 @@ public class MainOrderPage {
     private final By commentField = By.cssSelector("input[placeholder='Комментарий для курьера']");
     private final By orderConfirmationField = By.xpath(".//button[contains(@class, 'Button_Middle') and text() = 'Заказать']");
     private final By yesButton = By.xpath(".//button[contains(@class, 'Button_Middle') and text() = 'Да']");
-    private final By orderCreatedField = By.className("Order_Modal__YZ-d3");
+    private final By orderCreatedField = By.className("Order_ModalHeader__3FDaJ"); // переменная используется в OrdserTest
 
 
 
@@ -65,7 +66,7 @@ public class MainOrderPage {
     }
     // методы аренды
 
-    public void fillingOutRentalFields(String data, String dropdownOption, String ScooterColor, String comment) {
+    public void fillingOutRentalFields(String data, String ScooterColor, String comment) {
         driver.findElement(dataField).sendKeys(data);
         new WebDriverWait(driver, Duration.ofSeconds(10))
                 .until(ExpectedConditions.elementToBeClickable(datepickerPopperList));
@@ -85,9 +86,7 @@ public class MainOrderPage {
         new WebDriverWait(driver, Duration.ofSeconds(10))
         .until(ExpectedConditions.elementToBeClickable(yesButton));
         driver.findElement(yesButton).click();
-    }
-    public void getOrderCreatedField() {
-        driver.findElement(orderCreatedField).getText();
+
     }
 
     //метод второй кнопки Заказать

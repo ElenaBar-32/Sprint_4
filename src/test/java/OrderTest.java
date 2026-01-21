@@ -1,7 +1,18 @@
 
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
+
+
+import static org.junit.Assert.assertTrue;
+
 
 @RunWith(Parameterized.class)
 public class OrderTest extends BaseOrderTest {
@@ -14,12 +25,12 @@ public class OrderTest extends BaseOrderTest {
     private final String metroStation;
     private final String telephone;
     private final String data;
-    private final String dropdownOption;
+    private final String rentDropdownOption ;
     private final String scooterColor;
     private final String comment;
 
     public OrderTest(String name, String lastName, String address,
-                     String metroStation, String telephone, String data, String dropdownOption,String scooterColor,
+                     String metroStation, String telephone, String data, String rentDropdownOption ,String scooterColor,
                      String comment) {
         this.name = name;
         this.lastName = lastName;
@@ -27,7 +38,7 @@ public class OrderTest extends BaseOrderTest {
         this.metroStation = metroStation;
         this.telephone = telephone;
         this.data= data;
-        this.dropdownOption= dropdownOption;
+        this.rentDropdownOption = rentDropdownOption ;
         this.scooterColor = scooterColor;
         this.comment= comment;
     }
@@ -45,16 +56,23 @@ public class OrderTest extends BaseOrderTest {
         mainQuestionPage.clickCookieButton();
       orderStepsPage.clickOrder(name, lastName, address, metroStation, telephone);
       orderStepsPage.clickNext();
-      orderStepsPage.rentSteps(data, dropdownOption, scooterColor,comment);
+      orderStepsPage.rentSteps(data, scooterColor,comment);
       orderStepsPage.getOrderConfirmation();
       orderStepsPage.clickYesButton();
-      orderStepsPage.getOrderCreatedField();
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebElement orderCreatedField = wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("Order_ModalHeader__3FDaJ")));
+        assertTrue("Заказ не оформлен", orderCreatedField.getText().contains("Заказ оформлен"));
+
     }
     @Test
     public void buttonOrderTest2 () {
         mainQuestionPage.openPage();
         mainQuestionPage.clickCookieButton();
       orderStepsPage.clickOrderButton2();
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebElement whoScooterFor = wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("Order_Header__BZXOb")));
+
+        assertTrue("Страница Для кого самокат  не найдена", whoScooterFor.getText().contains("Для кого самокат"));
     }
 }
 

@@ -19,8 +19,8 @@ public class BaseOrderTest {
 
        WebDriverManager.chromedriver().setup();  // Должно быть перед созданием драйвера
       driver = new ChromeDriver();
-       // WebDriverManager.firefoxdriver().setup();
-       // driver= new FirefoxDriver();
+        //WebDriverManager.firefoxdriver().setup();
+      // driver= new FirefoxDriver();
         mainOrderPage = new MainOrderPage(driver);
         orderStepsPage = new OrderStepsPage(driver);
         mainQuestionPage = new MainQuestionPage(driver);
